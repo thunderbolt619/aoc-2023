@@ -1,17 +1,16 @@
 fun main() {
+    fun part1(input: List<String>): Int {
+        return sumCalibrationValues(input, hasNumberWords = false)
+    }
+
+    fun part2(input: List<String>): Int {
+        return sumCalibrationValues(input, hasNumberWords = true)
+    }
+
     val input = readInput("Day01", "input")
     part1(input).println()
     part2(input).println()
 }
-
-fun part1(input: List<String>): Int {
-    return sumCalibrationValues(input, hasNumberWords = false)
-}
-
-fun part2(input: List<String>): Int {
-    return sumCalibrationValues(input, hasNumberWords = true)
-}
-
 fun sumCalibrationValues(calibrationDocument: List<String>, hasNumberWords: Boolean): Int {
     var sum = 0
     for (line in calibrationDocument) {
